@@ -1,0 +1,19 @@
+---
+description: 
+globs: **/*.nix
+alwaysApply: false
+---
+---
+description: "Enforce modular nix layout"
+globs:
+  - "**/*.nix"
+---
+# structure.modular
+
+<rule>
+actions:
+  - type: warn
+    conditions:
+      - pattern: "^(import[ \t]+[\"']#"
+        message: "Prefer structured modules under modules/ rather than inline."
+</rule>
