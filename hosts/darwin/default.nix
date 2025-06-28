@@ -6,6 +6,7 @@ let user = "flawless"; in
   imports = [
     ../../modules/darwin/home-manager.nix
     ../../modules/shared
+    ../../modules/darwin/hammerspoon
   ];
 
   nix = {

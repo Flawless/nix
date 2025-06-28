@@ -14,6 +14,7 @@ _:
 
   # Utility Tools
   "syncthing"
+  "hammerspoon"
 
   # Entertainment Tools
   "vlc"
