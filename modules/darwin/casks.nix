@@ -18,6 +18,7 @@ _:
 
   # Entertainment Tools
   "vlc"
+  "steam"
 
   # Productivity Tools
   "raycast"

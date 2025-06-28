@@ -64,4 +64,5 @@ shared-packages ++ [
 
   # Music and entertainment
   spotify
+  steam
 ]
