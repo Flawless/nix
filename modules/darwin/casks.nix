@@ -12,6 +12,9 @@ _:
   "telegram"
   "zoom"
 
+  # Security Tools
+  "perimeter81"
+
   # Utility Tools
   "syncthing"
   "hammerspoon"
