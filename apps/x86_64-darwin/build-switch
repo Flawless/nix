@@ -10,6 +10,10 @@ FLAKE_SYSTEM="darwinConfigurations.${SYSTEM_TYPE}.system"
 
 export NIXPKGS_ALLOW_UNFREE=1
 
+echo "${YELLOW}Requesting sudo privileges upfront...${NC}"
+# Ask for password upfront and cache it
+sudo -v
+
 echo "${YELLOW}Starting build...${NC}"
 nix --extra-experimental-features 'nix-command flakes' build .#$FLAKE_SYSTEM $@
 
