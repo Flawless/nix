@@ -18,6 +18,7 @@ _:
   # Utility Tools
   "syncthing"
   "hammerspoon"
+  "karabiner-elements"
 
   # Entertainment Tools
   "vlc"

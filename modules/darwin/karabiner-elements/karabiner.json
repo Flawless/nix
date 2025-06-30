@@ -1,0 +1,70 @@
+{
+  "global": {
+    "check_for_updates_on_startup": true,
+    "show_in_menu_bar": true,
+    "show_profile_name_in_menu_bar": false,
+    "unsafe_ui": false
+  },
+  "profiles": [
+    {
+      "complex_modifications": {
+        "rules": [
+          {
+            "description": "Logitech Marble Mouse: Button 3 + trackball to scroll",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "pointing_button": "button3",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "enable_mouse_motion_to_scroll",
+                      "value": true,
+                      "key_up_value": false
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "mouse_motion_to_scroll",
+                "from": {
+                  "modifiers": { "optional": ["any"] }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "enable_mouse_motion_to_scroll",
+                    "value": true
+                  }
+                ],
+                "options": {
+                  "momentum_scroll_enabled": true,
+                  "speed_multiplier": 1.0
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "devices": [
+        {
+          "identifiers": {
+            "is_pointing_device": true,
+            "is_touchpad": false,
+            "product_id": 0x4001,
+            "vendor_id": 0x046d
+          },
+          "ignore": false,
+          "manipulate_caps_lock_led": false,
+          "simple_modifications": []
+        }
+      ],
+      "name": "Default profile",
+      "selected": true,
+      "simple_modifications": []
+    }
+  ]
+} 

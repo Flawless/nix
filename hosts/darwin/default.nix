@@ -7,6 +7,7 @@ let user = "flawless"; in
     ../../modules/darwin/home-manager.nix
     ../../modules/shared
     ../../modules/darwin/hammerspoon
+    ../../modules/darwin/karabiner-elements
   ];
 
   nix = {
