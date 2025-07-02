@@ -27,6 +27,9 @@ _:
   # Productivity Tools
   "raycast"
 
+  # Financial Tools
+  "ledger-live"
+
   # Browsers
   "google-chrome"
 ]

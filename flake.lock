@@ -74,7 +74,8 @@
         "owner": "nix-community",
         "repo": "home-manager",
         "type": "github"
-      }
+      },
+      "backupFileExtension": "backup"
     },
     "homebrew-bundle": {
       "flake": false,
