@@ -10,6 +10,10 @@ let user = "flawless"; in
     ../../modules/darwin/karabiner-elements
   ];
 
+  home-manager = {
+    backupFileExtension = "backup";
+  };
+
   nix = {
     package = pkgs.nix;
 
