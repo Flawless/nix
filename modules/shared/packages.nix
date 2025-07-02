@@ -60,4 +60,7 @@ with pkgs; [
   # Python packages
   python3
   uv
+
+  # Accounting and financial tools
+  ledger
 ]
