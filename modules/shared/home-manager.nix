@@ -54,6 +54,13 @@ let name = "flawless";
 
       # Always color ls and group directories
       alias ls='ls --color=auto'
+
+      # Pass aliases for convenience
+      alias p='pass'
+      alias pf='pass find'
+      alias pc='pass -c'
+      alias pg='pass git'
+      alias ps='pass show'
     '';
   };
 
