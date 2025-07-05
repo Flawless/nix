@@ -278,6 +278,7 @@ let name = "flawless";
 
   tmux = {
     enable = true;
+    shell = "${pkgs.zsh}/bin/zsh";
     plugins = with pkgs.tmuxPlugins; [
       vim-tmux-navigator
       sensible
@@ -318,6 +319,9 @@ let name = "flawless";
 
       # Enable full mouse support
       set -g mouse on
+
+      # Ensure zsh starts in interactive mode with proper environment
+      set -g default-command "${pkgs.zsh}/bin/zsh -i"
 
       # -----------------------------------------------------------------------------
       # Key bindings
