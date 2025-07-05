@@ -32,4 +32,5 @@ _:
 
   # Browsers
   "google-chrome"
+  "brave-browser"
 ]

@@ -58,6 +58,7 @@ shared-packages ++ [
   yad # yad-calendar is used with polybar
   xdotool
   google-chrome
+  brave
 
   # PDF viewer
   zathura
