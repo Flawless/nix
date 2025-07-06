@@ -23,6 +23,7 @@ _:
   # Entertainment Tools
   "vlc"
   "steam"
+  "transmission"
 
   # Productivity Tools
   "raycast"

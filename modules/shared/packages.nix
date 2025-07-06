@@ -62,6 +62,13 @@ with pkgs; [
   python3
   uv
 
+  # Rust development tools
+  cargo
+  rustc
+  rust-analyzer
+  rustfmt
+  clippy
+
   # Accounting and financial tools
   ledger
 ]
