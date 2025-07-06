@@ -57,6 +57,8 @@ let name = "flawless";
 
       # Pass aliases for convenience
       alias p='pass'
+
+      eval "$(direnv hook zsh)"
     '';
   };
 
@@ -213,14 +215,6 @@ let name = "flawless";
           (lib.mkIf pkgs.stdenv.hostPlatform.isLinux 10)
           (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin 14)
         ];
-      };
-
-      dynamic_padding = true;
-      decorations = "full";
-      title = "Terminal";
-      class = {
-        instance = "Alacritty";
-        general = "Alacritty";
       };
 
       colors = {

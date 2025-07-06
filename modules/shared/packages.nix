@@ -58,6 +58,9 @@ with pkgs; [
   unzip
   zsh-powerlevel10k
 
+  # Development environment tools
+  direnv
+
   # Python packages
   python3
   uv
