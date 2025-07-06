@@ -69,6 +69,9 @@ with pkgs; [
   rustfmt
   clippy
 
+  # AI and machine learning tools
+  ollama
+
   # Accounting and financial tools
   ledger
 ]

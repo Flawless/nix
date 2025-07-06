@@ -57,10 +57,6 @@ let name = "flawless";
 
       # Pass aliases for convenience
       alias p='pass'
-      alias pf='pass find'
-      alias pc='pass -c'
-      alias pg='pass git'
-      alias ps='pass show'
     '';
   };
 
