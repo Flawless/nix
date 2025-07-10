@@ -21,10 +21,13 @@ with pkgs; [
   gnupg
   libfido2
   pass
+  totp-cli
 
   # Cloud-related tools and SDKs
   docker
   docker-compose
+  colima
+  tilt
 
   # Media-related packages
   emacs-all-the-icons-fonts
@@ -63,6 +66,7 @@ with pkgs; [
 
   # Python packages
   python3
+  poetry
   uv
 
   # Rust development tools

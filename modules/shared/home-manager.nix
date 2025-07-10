@@ -22,6 +22,13 @@ let name = "flawless";
     ];
 
     initContent = lib.mkBefore ''
+      export ZSH="$HOME/.oh-my-zsh"
+
+      plugins=(
+        zsh-fzf-history-search
+        git
+      )
+
       if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
         . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
         . /nix/var/nix/profiles/default/etc/profile.d/nix.sh
@@ -37,8 +44,8 @@ let name = "flawless";
 
       # Emacs is my editor
       export ALTERNATE_EDITOR=""
-      export EDITOR="emacsclient -t"
-      export VISUAL="emacsclient -c -a emacs"
+      export EDITOR="vim"
+      export VISUAL="vim"
 
       e() {
           emacsclient -t "$@"
@@ -57,6 +64,10 @@ let name = "flawless";
 
       # Pass aliases for convenience
       alias p='pass'
+
+      alias k='kubectl'
+      alias ktx='kubectl config use-context '
+      alias kns='kubectl config set-context --current --namespace '
 
       eval "$(direnv hook zsh)"
     '';

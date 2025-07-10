@@ -25,6 +25,9 @@ in
 
   homebrew = {
     enable = true;
+    brews = [
+      "aider"
+    ];
     casks = pkgs.callPackage ./casks.nix {};
     # onActivation.cleanup = "uninstall";
 
