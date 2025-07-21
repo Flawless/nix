@@ -328,6 +328,10 @@ let name = "flawless";
       # Enable full mouse support
       set -g mouse on
 
+      # Start windows and panes at 1, not 0
+      set -g base-index 1
+      set -g pane-base-index 1
+
       # Ensure zsh starts in interactive mode with proper environment
       set -g default-command "${pkgs.zsh}/bin/zsh -i"
 

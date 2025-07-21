@@ -5,6 +5,7 @@ _:
   "homebrew/cask/docker"
   "cursor"
   "zed"
+  "orbstack"
 
   # Communication Tools
   "discord"
@@ -19,6 +20,7 @@ _:
   "syncthing"
   "hammerspoon"
   "karabiner-elements"
+  "kap"
 
   # Entertainment Tools
   "vlc"
@@ -27,6 +29,7 @@ _:
 
   # Productivity Tools
   "raycast"
+  "claude"
 
   # Financial Tools
   "ledger-live"

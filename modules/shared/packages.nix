@@ -14,6 +14,12 @@ with pkgs; [
   sqlite
   wget
   zip
+  fzf
+
+  # Data tools
+  postgresql
+  pgcli
+  psqlodbc
 
   # Encryption and security tools
   age
@@ -26,7 +32,6 @@ with pkgs; [
   # Cloud-related tools and SDKs
   docker
   docker-compose
-  colima
   tilt
 
   # Media-related packages
@@ -41,14 +46,17 @@ with pkgs; [
   meslo-lgs-nf
   spotify
 
-  # Node.js development tools
+  # development tools
   nodePackages.npm # globally install npm
   nodePackages.prettier
   nodejs
   bruno
   postman
+  bun
+  go
 
   # Text and terminal utilities
+  claude-code
   htop
   hunspell
   iftop
@@ -60,6 +68,8 @@ with pkgs; [
   unrar
   unzip
   zsh-powerlevel10k
+  timewarrior
+  taskwarrior
 
   # Development environment tools
   direnv
