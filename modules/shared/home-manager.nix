@@ -7,7 +7,7 @@ let name = "flawless";
   # Shared shell configuration
   zsh = {
     enable = true;
-    autocd = false;
+    autocd = true;  # Allow navigating directories without 'cd'
     plugins = [
       {
         name = "powerlevel10k";
@@ -21,13 +21,21 @@ let name = "flawless";
       }
     ];
 
-    initContent = lib.mkBefore ''
-      export ZSH="$HOME/.oh-my-zsh"
+    # Enable autosuggestions with low contrast
+    autosuggestion = {
+      enable = true;
+      highlight = "fg=8";  # Low contrast gray color
+    };
 
-      plugins=(
-        zsh-fzf-history-search
-        git
-      )
+    # Enable syntax highlighting
+    syntaxHighlighting.enable = true;
+
+    initContent = lib.mkBefore ''
+      # FZF configuration for fuzzy history search and file finding
+      if command -v fzf >/dev/null 2>&1; then
+        source ${pkgs.fzf}/share/fzf/key-bindings.zsh
+        source ${pkgs.fzf}/share/fzf/completion.zsh
+      fi
 
       if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
         . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
