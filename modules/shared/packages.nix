@@ -26,6 +26,7 @@ with pkgs; [
   age-plugin-yubikey
   gnupg
   libfido2
+  nmap
   pass
   totp-cli
 
