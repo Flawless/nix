@@ -28,6 +28,7 @@ with pkgs; [
   libfido2
   nmap
   pass
+  inetutils # Provides telnet and other network utilities
   totp-cli
 
   # Cloud-related tools and SDKs
