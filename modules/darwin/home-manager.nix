@@ -1,4 +1,4 @@
-{ config, pkgs, lib, home-manager, ... }:
+{ config, pkgs, lib, home-manager, emacs-config, ... }:
 
 let
   user = "flawless";
@@ -7,7 +7,7 @@ let
     #!/bin/sh
     emacsclient -c -n &
   '';
-  sharedFiles = import ../shared/files.nix { inherit config pkgs; };
+  sharedFiles = import ../shared/files.nix { inherit config pkgs emacs-config; };
   additionalFiles = import ./files.nix { inherit user config pkgs; };
 in
 {

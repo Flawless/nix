@@ -25,10 +25,10 @@ let
 
       if [[ $1 = "-t" ]]; then
         # Terminal mode
-        ${pkgs.emacs}/bin/emacsclient -t $@
+        ${pkgs.emacs-git}/bin/emacsclient -t $@
       else
         # GUI mode
-        ${pkgs.emacs}/bin/emacsclient -c -n $@
+        ${pkgs.emacs-git}/bin/emacsclient -c -n $@
       fi
     '';
   };

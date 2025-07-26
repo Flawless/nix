@@ -27,9 +27,17 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    emacs-config = {
+      url = "github:Flawless/emacs.d";
+      flake = false;
+    };
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, darwin, nix-homebrew, homebrew-bundle, homebrew-core, homebrew-cask, home-manager, nixpkgs, disko } @inputs:
+  outputs = { self, darwin, nix-homebrew, homebrew-bundle, homebrew-core, homebrew-cask, home-manager, nixpkgs, disko, emacs-config, emacs-overlay } @inputs:
     let
       user = "flawless";
       linuxSystems = [ "x86_64-linux" "aarch64-linux" ];
