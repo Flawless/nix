@@ -20,6 +20,7 @@ with pkgs; [
   postgresql
   pgcli
   psqlodbc
+  dbeaver-bin
 
   # Encryption and security tools
   age
@@ -56,9 +57,14 @@ with pkgs; [
   postman
   bun
   go
+  clojure
+  jdk21 # Latest LTS Java
+  maven
+  gradle
 
   # Text and terminal utilities
   claude-code
+  gitu
   htop
   hunspell
   iftop
