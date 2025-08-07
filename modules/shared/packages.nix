@@ -15,6 +15,7 @@ with pkgs; [
   wget
   zip
   fzf
+  unixODBC
 
   # Data tools
   postgresql
@@ -35,7 +36,9 @@ with pkgs; [
   # Cloud-related tools and SDKs
   docker
   docker-compose
+  kubernetes-helm
   tilt
+  lens
 
   # Media-related packages
   emacs-all-the-icons-fonts
@@ -52,12 +55,12 @@ with pkgs; [
   # development tools
   nodePackages.npm # globally install npm
   nodePackages.prettier
-  nodejs
   bruno
   postman
   bun
   go
   clojure
+  polylith
   jdk21 # Latest LTS Java
   maven
   gradle

@@ -77,13 +77,18 @@ let name = "flawless";
       alias ktx='kubectl config use-context '
       alias kns='kubectl config set-context --current --namespace '
 
+      # Claude alias
+      if [[ -x ~/.claude/local/claude ]]; then
+        alias claude='~/.claude/local/claude --model sonnet'
+      fi
+
       eval "$(direnv hook zsh)"
     '';
   };
 
   git = {
     enable = true;
-    ignores = [ "*.swp" ];
+    ignores = [ "*.swp" ".claude/settings.local.json" "CLAUDE.local.md" ];
     userName = name;
     userEmail = email;
     lfs = {

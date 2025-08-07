@@ -94,3 +94,7 @@ The repository includes comprehensive development tools:
 - Enforce modular structure - avoid inline imports, use `modules/` directory
 - Follow existing patterns for cross-platform vs platform-specific code
 - Prefer editing existing modules over creating new files
+
+## Memory Notes
+- Test with `build` command instead of `build-switch` to verify configuration without immediately switching
+- Use longer timeouts to nix run .#build
