@@ -73,6 +73,7 @@ with pkgs; [
   iftop
   jetbrains-mono
   jq
+  plandex
   ripgrep
   tree
   tmux
@@ -98,7 +99,7 @@ with pkgs; [
   clippy
 
   # AI and machine learning tools
-  ollama
+  # ollama - using homebrew version for latest updates
 
   # Accounting and financial tools
   ledger
