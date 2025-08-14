@@ -79,7 +79,7 @@ let name = "flawless";
 
       # Claude alias
       if [[ -x ~/.claude/local/claude ]]; then
-        alias claude='~/.claude/local/claude --model sonnet'
+        alias claude='~/.claude/local/claude'
       fi
 
       eval "$(direnv hook zsh)"
@@ -88,7 +88,22 @@ let name = "flawless";
 
   git = {
     enable = true;
-    ignores = [ "*.swp" ".claude/settings.local.json" "CLAUDE.local.md" ];
+    ignores = [
+      "*.swp"
+      ".claude/settings.local.json"
+      "CLAUDE.local.md"
+      ".projectile-cache.eld"
+      ".DS_Store"
+      "Thumbs.db"
+      ".idea/"
+      ".vscode/"
+      "*.log"
+      "*.tmp"
+      "*~"
+      ".env.local"
+      ".direnv/"
+      ".envrc.local"
+    ];
     userName = name;
     userEmail = email;
     lfs = {
@@ -97,7 +112,7 @@ let name = "flawless";
     extraConfig = {
       init.defaultBranch = "main";
       core = {
-	    editor = "vim";
+      editor = "vim";
         autocrlf = "input";
       };
       pull.rebase = true;
