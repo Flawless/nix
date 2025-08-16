@@ -34,9 +34,9 @@ in {
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
   networking = {
-    hostName = "%HOST%"; # Define your hostname.
+    hostName = "nixos"; # Define your hostname.
     useDHCP = false;
-    interfaces."%INTERFACE%".useDHCP = true;
+    # interfaces.eth0.useDHCP = true;  # Uncomment and adjust interface name as needed
   };
 
   # Turn on flag for proprietary software
