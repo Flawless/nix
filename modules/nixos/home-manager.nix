@@ -6,15 +6,17 @@ let
   shared-programs = import ../shared/home-manager.nix { inherit config pkgs lib; };
   shared-files = import ../shared/files.nix { inherit config pkgs emacs-config; };
 
-  polybar-user_modules = builtins.readFile (pkgs.replaceVars ./config/polybar/user_modules.ini {
+  polybar-user_modules = pkgs.substituteAll {
+    src = ./config/polybar/user_modules.ini;
     packages = "${xdg_configHome}/polybar/bin/check-nixos-updates.sh";
     searchpkgs = "${xdg_configHome}/polybar/bin/search-nixos-updates.sh";
     launcher = "${xdg_configHome}/polybar/bin/launcher.sh";
     powermenu = "${xdg_configHome}/rofi/bin/powermenu.sh";
     calendar = "${xdg_configHome}/polybar/bin/popup-calendar.sh";
-  });
+  };
 
-  polybar-config = pkgs.replaceVars ./config/polybar/config.ini {
+  polybar-config = pkgs.substituteAll {
+    src = ./config/polybar/config.ini;
     font0 = "DejaVu Sans:size=12;3";
     font1 = "feather:size=12;3"; # from overlay
   };
@@ -60,8 +62,8 @@ in
 
     polybar = {
       enable = true;
-      config = polybar-config;
-      extraConfig = polybar-bars + polybar-colors + polybar-modules + polybar-user_modules;
+      config = builtins.readFile polybar-config;
+      extraConfig = polybar-bars + polybar-colors + polybar-modules + builtins.readFile polybar-user_modules;
       package = pkgs.polybarFull;
       script = "polybar main &";
     };
