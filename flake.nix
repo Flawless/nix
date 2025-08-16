@@ -40,7 +40,7 @@
   outputs = { self, darwin, nix-homebrew, homebrew-bundle, homebrew-core, homebrew-cask, home-manager, nixpkgs, disko, emacs-config, emacs-overlay } @inputs:
     let
       user = "flawless";
-      linuxSystems = [ "x86_64-linux" "aarch64-linux" ];
+      linuxSystems = [ "x86_64-linux" ];
       darwinSystems = [ "aarch64-darwin" "x86_64-darwin" ];
       forAllSystems = f: nixpkgs.lib.genAttrs (linuxSystems ++ darwinSystems) f;
       devShell = system: let pkgs = nixpkgs.legacyPackages.${system}; in {
