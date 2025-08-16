@@ -34,7 +34,7 @@ in {
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
   networking = {
-    hostName = "nixos"; # Define your hostname.
+    hostName = "wireworm"; # Define your hostname.
     useDHCP = false;
     # interfaces.eth0.useDHCP = true;  # Uncomment and adjust interface name as needed
   };

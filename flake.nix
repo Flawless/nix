@@ -121,7 +121,7 @@
               users.${user} = import ./modules/nixos/home-manager.nix;
             };
           }
-          ./hosts/nixos
+          ./hosts/wireworm
         ];
      });
   };
