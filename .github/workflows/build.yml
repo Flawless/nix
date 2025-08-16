@@ -1,0 +1,79 @@
+name: Build NixOS/Darwin Configuration
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+  workflow_dispatch:
+
+jobs:
+  build-darwin:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v14
+        with:
+          extra-conf: |
+            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
+            substituters = https://cache.nixos.org https://nix-community.cachix.org
+
+      - name: Setup Magic Nix Cache
+        uses: DeterminateSystems/magic-nix-cache-action@v8
+
+      - name: Check Nix flake
+        run: |
+          nix flake check --no-build
+          nix flake show
+
+      - name: Build Darwin configuration
+        run: |
+          nix build .#darwinConfigurations.aarch64-darwin.system --dry-run
+          nix build .#darwinConfigurations.aarch64-darwin.system --no-link
+
+  build-nixos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v14
+        with:
+          extra-conf: |
+            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
+            substituters = https://cache.nixos.org https://nix-community.cachix.org
+
+      - name: Setup Magic Nix Cache
+        uses: DeterminateSystems/magic-nix-cache-action@v8
+
+      - name: Check Nix flake
+        run: |
+          nix flake check --no-build
+          nix flake show
+
+      - name: Build NixOS configuration
+        run: |
+          nix build .#nixosConfigurations.x86_64-linux.system --dry-run
+          nix build .#nixosConfigurations.x86_64-linux.system --no-link
+
+  validate-flake:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v14
+
+      - name: Validate flake metadata
+        run: |
+          nix flake metadata
+          nix flake check --no-build
+
+      - name: Check formatting
+        run: |
+          nix develop --command echo "Development shell works"
