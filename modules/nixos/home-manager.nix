@@ -6,25 +6,21 @@ let
   shared-programs = import ../shared/home-manager.nix { inherit config pkgs lib; };
   shared-files = import ../shared/files.nix { inherit config pkgs emacs-config; };
 
-  polybar-user_modules = pkgs.writeText "user_modules.ini" (
-    builtins.replaceStrings
-      ["@packages@" "@searchpkgs@" "@launcher@" "@powermenu@" "@calendar@"]
-      [
-        "${xdg_configHome}/polybar/bin/check-nixos-updates.sh"
-        "${xdg_configHome}/polybar/bin/search-nixos-updates.sh"
-        "${xdg_configHome}/polybar/bin/launcher.sh"
-        "${xdg_configHome}/rofi/bin/powermenu.sh"
-        "${xdg_configHome}/polybar/bin/popup-calendar.sh"
-      ]
-      (builtins.readFile ./config/polybar/user_modules.ini)
-  );
+  polybar-user_modules = builtins.replaceStrings
+    ["@packages@" "@searchpkgs@" "@launcher@" "@powermenu@" "@calendar@"]
+    [
+      "${xdg_configHome}/polybar/bin/check-nixos-updates.sh"
+      "${xdg_configHome}/polybar/bin/search-nixos-updates.sh"
+      "${xdg_configHome}/polybar/bin/launcher.sh"
+      "${xdg_configHome}/rofi/bin/powermenu.sh"
+      "${xdg_configHome}/polybar/bin/popup-calendar.sh"
+    ]
+    (builtins.readFile ./config/polybar/user_modules.ini);
 
-  polybar-config = pkgs.writeText "config.ini" (
-    builtins.replaceStrings
-      ["@font0@" "@font1@"]
-      ["DejaVu Sans:size=12;3" "feather:size=12;3"]
-      (builtins.readFile ./config/polybar/config.ini)
-  );
+  polybar-config = pkgs.writeText "polybar-config.ini" (builtins.replaceStrings
+    ["@font0@" "@font1@"]
+    ["DejaVu Sans:size=12;3" "feather:size=12;3"]
+    (builtins.readFile ./config/polybar/config.ini));
 
   polybar-modules = builtins.readFile ./config/polybar/modules.ini;
   polybar-bars = builtins.readFile ./config/polybar/bars.ini;
@@ -67,8 +63,8 @@ in
 
     polybar = {
       enable = true;
-      config = builtins.readFile polybar-config;
-      extraConfig = polybar-bars + polybar-colors + polybar-modules + builtins.readFile polybar-user_modules;
+      config = polybar-config;
+      extraConfig = polybar-bars + polybar-colors + polybar-modules + polybar-user_modules;
       package = pkgs.polybarFull;
       script = "polybar main &";
     };
