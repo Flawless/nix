@@ -104,7 +104,7 @@
                 autoMigrate = true;
               };
             }
-            ./hosts/darwin
+            ./hosts/hellblade
           ];
         }
       );
