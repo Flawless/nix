@@ -77,9 +77,9 @@ let name = "flawless";
       alias ktx='kubectl config use-context '
       alias kns='kubectl config set-context --current --namespace '
 
-      # Claude alias
+      # Claude alias with opus as default model
       if [[ -x ~/.claude/local/claude ]]; then
-        alias claude='~/.claude/local/claude'
+        alias claude='~/.claude/local/claude --model opus'
       fi
 
       eval "$(direnv hook zsh)"

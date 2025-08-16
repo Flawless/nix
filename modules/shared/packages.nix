@@ -54,6 +54,8 @@ with pkgs; [
 
   # development tools
   nodePackages.npm # globally install npm
+  nodePackages.pnpm # pnpm package manager
+  yarn # yarn package manager
   nodePackages.prettier
   bruno
   postman
@@ -67,13 +69,13 @@ with pkgs; [
 
   # Text and terminal utilities
   claude-code
+  gh
   gitu
   htop
   hunspell
   iftop
   jetbrains-mono
   jq
-  plandex
   ripgrep
   tree
   tmux
@@ -85,6 +87,7 @@ with pkgs; [
 
   # Development environment tools
   direnv
+  pre-commit
 
   # Python packages
   python3

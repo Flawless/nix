@@ -27,6 +27,7 @@ in
     enable = true;
     brews = [
       "aider"
+      "ollama"  # Latest version for gpt-oss model support
     ];
     casks = pkgs.callPackage ./casks.nix {};
     # onActivation.cleanup = "uninstall";
