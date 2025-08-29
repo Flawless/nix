@@ -99,6 +99,7 @@ let name = "flawless";
       ".vscode/"
       "*.log"
       "*.tmp"
+      ".tmp/"
       "*~"
       ".env.local"
       ".direnv/"
