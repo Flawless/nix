@@ -51,6 +51,7 @@ with pkgs; [
   noto-fonts-emoji
   meslo-lgs-nf
   spotify
+  betterdisplay
 
   # development tools
   nodePackages.npm # globally install npm
@@ -63,7 +64,7 @@ with pkgs; [
   go
   clojure
   polylith
-  jdk21 # Latest LTS Java
+  jre # Java runtime for running applications
   maven
   gradle
 
@@ -88,6 +89,7 @@ with pkgs; [
   # Development environment tools
   direnv
   pre-commit
+  ngrok
 
   # Python packages
   python3
