@@ -64,7 +64,7 @@ with pkgs; [
   go
   clojure
   polylith
-  jre # Java runtime for running applications
+  jre # Java 21 LTS runtime (default)
   maven
   gradle
 

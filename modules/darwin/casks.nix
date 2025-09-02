@@ -6,6 +6,8 @@ _:
   "cursor"
   "zed"
   "orbstack"
+  "vagrant"
+  "virtualbox"
 
   # Communication Tools
   "discord"

@@ -73,14 +73,28 @@ let name = "flawless";
       # Pass aliases for convenience
       alias p='pass'
 
+      # Git aliases
+      alias gs='git status'
+      alias gp='git pull'
+      alias gc='git commit'
+      alias gd='git diff'
+      
+      # Kubernetes aliases
       alias k='kubectl'
       alias ktx='kubectl config use-context '
       alias kns='kubectl config set-context --current --namespace '
-
-      # Claude alias with opus as default model
+      
+      # Docker aliases
+      alias docker-clean='docker system prune -a -f'
+      
+      # Claude aliases
+      alias update-claude='cd ~/.claude && git pull'
       if [[ -x ~/.claude/local/claude ]]; then
         alias claude='~/.claude/local/claude --model opus'
       fi
+      
+      # Common aliases
+      alias ll='ls -alF'
 
       eval "$(direnv hook zsh)"
     '';
