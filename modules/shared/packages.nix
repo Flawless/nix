@@ -32,6 +32,7 @@ with pkgs; [
   pass
   inetutils # Provides telnet and other network utilities
   totp-cli
+  wireguard-tools # WireGuard VPN client tools
 
   # Cloud-related tools and SDKs
   docker
@@ -51,7 +52,7 @@ with pkgs; [
   noto-fonts-emoji
   meslo-lgs-nf
   spotify
-  betterdisplay
+  monitorcontrol
 
   # development tools
   nodePackages.npm # globally install npm
@@ -71,6 +72,7 @@ with pkgs; [
   # Text and terminal utilities
   claude-code
   gh
+  glab
   gitu
   htop
   hunspell
@@ -108,4 +110,7 @@ with pkgs; [
 
   # Accounting and financial tools
   ledger
+
+  # LaTeX/TeX packages for document generation
+  texlive.combined.scheme-full  # Full scheme includes all packages including wrapfig, rotating, etc.
 ]
