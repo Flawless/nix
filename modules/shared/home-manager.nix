@@ -78,21 +78,21 @@ let name = "flawless";
       alias gp='git pull'
       alias gc='git commit'
       alias gd='git diff'
-      
+
       # Kubernetes aliases
       alias k='kubectl'
       alias ktx='kubectl config use-context '
       alias kns='kubectl config set-context --current --namespace '
-      
+
       # Docker aliases
       alias docker-clean='docker system prune -a -f'
-      
+
       # Claude aliases
       alias update-claude='cd ~/.claude && git pull'
       if [[ -x ~/.claude/local/claude ]]; then
-        alias claude='~/.claude/local/claude --model opus'
+        alias claude='~/.claude/local/claude'
       fi
-      
+
       # Common aliases
       alias ll='ls -alF'
 
@@ -124,8 +124,12 @@ let name = "flawless";
     lfs = {
       enable = true;
     };
+    signing = {
+      signByDefault = true;
+      key = "BDAF0B4D77065547";
+    };
     extraConfig = {
-      init.defaultBranch = "main";
+      init.defaultBranch = "master";
       core = {
       editor = "vim";
         autocrlf = "input";
