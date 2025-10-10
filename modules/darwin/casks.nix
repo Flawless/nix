@@ -14,6 +14,7 @@ _:
   "notion"
   "telegram"
   "zoom"
+  "krisp"
 
   # Security Tools
   "perimeter81"
@@ -23,6 +24,7 @@ _:
   "hammerspoon"
   "karabiner-elements"
   "kap"
+  "microsoft-remote-desktop"
 
   # Entertainment Tools
   "vlc"

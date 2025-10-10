@@ -1,6 +1,15 @@
 { pkgs }:
 
-with pkgs; [
+with pkgs;
+let
+  codex = writeShellApplication {
+    name = "codex";
+    runtimeInputs = [ nodejs ];
+    text = ''
+      exec npx @openai/codex@latest "$@"
+    '';
+  };
+in [
   # General packages for development and system management
   aspell
   aspellDicts.en
@@ -38,6 +47,7 @@ with pkgs; [
   docker
   docker-compose
   kubernetes-helm
+  kubeseal
   tilt
   lens
 
@@ -113,4 +123,5 @@ with pkgs; [
 
   # LaTeX/TeX packages for document generation
   texlive.combined.scheme-full  # Full scheme includes all packages including wrapfig, rotating, etc.
+  codex
 ]
