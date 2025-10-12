@@ -44,6 +44,7 @@ in [
   wireguard-tools # WireGuard VPN client tools
 
   # Cloud-related tools and SDKs
+  argocd
   docker
   docker-compose
   kubernetes-helm
