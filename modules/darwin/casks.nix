@@ -1,6 +1,7 @@
 _:
 
 [
+  "amneziavpn"
   # Development Tools
   "homebrew/cask/docker"
   "cursor"

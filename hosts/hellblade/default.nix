@@ -46,6 +46,7 @@ let user = "flawless"; in
       withWebP = true;
       withImageMagick = true;
     })
+    spoofdpi
   ] ++ (import ../../modules/shared/packages.nix { inherit pkgs; });
 
   launchd.user.agents.emacs.path = [ config.environment.systemPath ];

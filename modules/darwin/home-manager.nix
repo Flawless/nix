@@ -26,6 +26,7 @@ in
   homebrew = {
     enable = true;
     brews = [
+      "zbar"
       "aider"
       "ollama"  # Latest version for gpt-oss model support
     ];
@@ -67,7 +68,7 @@ in
       manual.manpages.enable = false;
     };
   };
-  
+
   # Fully declarative dock using the latest from Nix Store
   local.dock = {
     enable = true;
