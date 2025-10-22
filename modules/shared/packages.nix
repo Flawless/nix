@@ -108,6 +108,10 @@ in [
   python3
   poetry
   uv
+  pipx # Install Python CLI tools in isolated environments
+
+  # iOS development tools
+  idb-companion # Facebook's iOS Development Bridge companion (requires fb-idb Python client)
 
   # Rust development tools
   cargo
