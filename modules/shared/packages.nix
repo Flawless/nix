@@ -11,6 +11,7 @@ let
   };
 in [
   # General packages for development and system management
+  aria2
   aspell
   aspellDicts.en
   bash-completion
@@ -37,6 +38,7 @@ in [
   age-plugin-yubikey
   gnupg
   libfido2
+  mkcert # Local development SSL certificates
   nmap
   pass
   inetutils # Provides telnet and other network utilities

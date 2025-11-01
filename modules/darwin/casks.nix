@@ -26,6 +26,8 @@ _:
   "karabiner-elements"
   "kap"
   "microsoft-remote-desktop"
+  "colemak-dh"
+  "colemak-dhk"
 
   # Entertainment Tools
   "vlc"
