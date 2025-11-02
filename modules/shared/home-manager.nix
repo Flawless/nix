@@ -119,8 +119,6 @@ let name = "flawless";
       ".direnv/"
       ".envrc.local"
     ];
-    userName = name;
-    userEmail = email;
     lfs = {
       enable = true;
     };
@@ -128,10 +126,12 @@ let name = "flawless";
       signByDefault = true;
       key = "BDAF0B4D77065547";
     };
-    extraConfig = {
+    settings = {
+      user.name = name;
+      user.email = email;
       init.defaultBranch = "master";
       core = {
-      editor = "vim";
+        editor = "vim";
         autocrlf = "input";
       };
       pull.rebase = true;
@@ -308,6 +308,7 @@ let name = "flawless";
 
   ssh = {
     enable = true;
+    enableDefaultConfig = false;
     includes = [
       (lib.mkIf pkgs.stdenv.hostPlatform.isLinux
         "/home/${user}/.ssh/config_external"
@@ -317,6 +318,10 @@ let name = "flawless";
       )
     ];
     matchBlocks = {
+      "*" = {
+        serverAliveInterval = 60;
+        serverAliveCountMax = 3;
+      };
       "github.com" = {
         identitiesOnly = true;
         identityFile = [
