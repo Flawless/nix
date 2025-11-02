@@ -23,15 +23,13 @@ let
       # @raycast.icon ${xdg_dataHome}/img/icons/Emacs.icns
       # @raycast.iconDark ${xdg_dataHome}/img/icons/Emacs.icns
 
-      # Temporarily disabled - emacs-git not available
-      echo "Emacs temporarily disabled due to build issues"
-      # if [[ $1 = "-t" ]]; then
-      #   # Terminal mode
-      #   ${pkgs.emacs-git}/bin/emacsclient -t $@
-      # else
-      #   # GUI mode
-      #   ${pkgs.emacs-git}/bin/emacsclient -c -n $@
-      # fi
+      if [[ $1 = "-t" ]]; then
+        # Terminal mode
+        ${pkgs.emacs-git}/bin/emacsclient -t $@
+      else
+        # GUI mode
+        ${pkgs.emacs-git}/bin/emacsclient -c -n $@
+      fi
     '';
   };
 }
