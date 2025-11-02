@@ -2,9 +2,14 @@
 
 with pkgs;
 let
+  # Override nodejs to skip failing tests on macOS
+  nodejs-fixed = nodejs.overrideAttrs (oldAttrs: {
+    doCheck = false;
+  });
+
   codex = writeShellApplication {
     name = "codex";
-    runtimeInputs = [ nodejs ];
+    runtimeInputs = [ nodejs-fixed ];
     text = ''
       exec npx @openai/codex@latest "$@"
     '';
