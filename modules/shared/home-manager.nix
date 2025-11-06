@@ -52,8 +52,8 @@ let name = "flawless";
 
       # Emacs is my editor
       export ALTERNATE_EDITOR=""
-      export EDITOR="vim"
-      export VISUAL="vim"
+      export EDITOR="emacsclient -t"
+      export VISUAL="emacsclient -c"
 
       e() {
           emacsclient -t "$@"

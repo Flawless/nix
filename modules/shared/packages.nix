@@ -2,18 +2,13 @@
 
 with pkgs;
 let
-  # Override nodejs to skip failing tests on macOS
-  nodejs-fixed = nodejs.overrideAttrs (oldAttrs: {
-    doCheck = false;
-  });
-
-  codex = writeShellApplication {
-    name = "codex";
-    runtimeInputs = [ nodejs-fixed ];
-    text = ''
-      exec npx @openai/codex@latest "$@"
-    '';
-  };
+  # codex = writeShellApplication {
+  #   name = "codex";
+  #   runtimeInputs = [ nodejs ];
+  #   text = ''
+  #     exec npx @openai/codex@latest "$@"
+  #   '';
+  # };
 in [
   # General packages for development and system management
   aria2
@@ -73,15 +68,17 @@ in [
   monitorcontrol
 
   # development tools
-  nodePackages.npm # globally install npm
-  nodePackages.pnpm # pnpm package manager
-  yarn # yarn package manager
-  nodePackages.prettier
+  nodejs  # Required for Claude Code and other node-based tools
+  # nodePackages.npm # globally install npm
+  # nodePackages.pnpm # pnpm package manager
+  # yarn # yarn package manager
+  # nodePackages.prettier
   bruno
   postman
   bun
   go
   clojure
+  babashka
   polylith
   jre # Java 21 LTS runtime (default)
   maven
@@ -126,6 +123,7 @@ in [
   rust-analyzer
   rustfmt
   clippy
+  sqlx-cli
 
   # AI and machine learning tools
   # ollama - using homebrew version for latest updates
@@ -135,5 +133,5 @@ in [
 
   # LaTeX/TeX packages for document generation
   texlive.combined.scheme-full  # Full scheme includes all packages including wrapfig, rotating, etc.
-  codex
+  # codex
 ]
