@@ -2,13 +2,13 @@
 
 with pkgs;
 let
-  # codex = writeShellApplication {
-  #   name = "codex";
-  #   runtimeInputs = [ nodejs ];
-  #   text = ''
-  #     exec npx @openai/codex@latest "$@"
-  #   '';
-  # };
+  codex = writeShellApplication {
+    name = "codex";
+    runtimeInputs = [ nodejs ];
+    text = ''
+      exec npx @openai/codex@latest "$@"
+    '';
+  };
 in [
   # General packages for development and system management
   aria2
@@ -124,6 +124,7 @@ in [
   rustfmt
   clippy
   sqlx-cli
+  cargo-watch
 
   # AI and machine learning tools
   # ollama - using homebrew version for latest updates
@@ -133,5 +134,5 @@ in [
 
   # LaTeX/TeX packages for document generation
   texlive.combined.scheme-full  # Full scheme includes all packages including wrapfig, rotating, etc.
-  # codex
+  codex
 ]
