@@ -40,6 +40,8 @@ in [
   libfido2
   mkcert # Local development SSL certificates
   nmap
+  hping
+  iperf3
   pass
   inetutils # Provides telnet and other network utilities
   totp-cli

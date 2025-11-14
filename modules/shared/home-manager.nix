@@ -8,6 +8,13 @@ let name = "flawless";
   zsh = {
     enable = true;
     autocd = true;  # Allow navigating directories without 'cd'
+
+    # Prevent git from creating locks during status checks
+    # This allows stale data but prevents lock conflicts during commits
+    sessionVariables = {
+      GIT_OPTIONAL_LOCKS = "0";
+    };
+
     plugins = [
       {
         name = "powerlevel10k";
