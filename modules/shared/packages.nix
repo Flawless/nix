@@ -127,6 +127,8 @@ in [
   clippy
   sqlx-cli
   cargo-watch
+  trunk
+  wasm-bindgen-cli
 
   # AI and machine learning tools
   # ollama - using homebrew version for latest updates
