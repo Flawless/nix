@@ -129,6 +129,7 @@ in [
   cargo-watch
   trunk
   wasm-bindgen-cli
+  llvm
 
   # AI and machine learning tools
   # ollama - using homebrew version for latest updates
