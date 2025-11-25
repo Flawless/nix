@@ -82,9 +82,23 @@ in [
   clojure
   babashka
   polylith
-  jre # Java 21 LTS runtime (default)
+  jdk17 # Java 17 LTS (required for Android development)
   maven
   gradle
+  android-tools # adb, fastboot, platform tools
+
+  # Android SDK with emulator
+  (androidenv.composeAndroidPackages {
+    cmdLineToolsVersion = "11.0";
+    platformToolsVersion = "35.0.1";
+    buildToolsVersions = [ "34.0.0" ];
+    platformVersions = [ "34" ]; # Android 14
+    includeEmulator = true;
+    includeSystemImages = true;
+    systemImageTypes = [ "google_apis_playstore" ];
+    abiVersions = [ "arm64-v8a" ]; # Apple Silicon
+    includeNDK = false; # Set true if you need native C/C++
+  }).androidsdk
 
   # Text and terminal utilities
   claude-code
